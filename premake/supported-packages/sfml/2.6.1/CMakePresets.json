@@ -1,0 +1,43 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "Default Config",
+      "description": "Default build using Visual Studio",
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "SFML_USE_STATIC_STD_LIBS": "TRUE",
+        "BUILD_SHARED_LIBS": "OFF",
+        "SFML_BUILD_GRAPHICS": "ON",
+        "SFML_BUILD_WINDOW": "ON",
+        "SFML_BUILD_AUDIO": "ON",
+        "SFML_BUILD_NETWORK": "ON",
+        "SFML_BUILD_DOC": "OFF",
+        "SFML_BUILD_EXAMPLES": "OFF",
+        "SFML_USE_SYSTEM_DEPS": "FALSE",
+        "SFML_GENERATE_PDB": "TRUE"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "release",
+      "description": "Release build",
+      "configurePreset": "default",
+      "configuration": "Release"
+    },
+    {
+      "name": "debug",
+      "description": "Debug build",
+      "configurePreset": "default",
+      "configuration": "Debug"
+    }
+  ]
+}
