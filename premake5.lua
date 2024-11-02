@@ -151,6 +151,9 @@ end
 
 table.insert(contrib_defines, "_CRT_SECURE_NO_WARNINGS")
 
+-- Target windows 10.
+table.insert(contrib_defines, "_WIN32_WINNT=0x0A00")
+
 print("Gathering list of contrib includes...")
 
 for pkg_name, pkg in pairs(package_info.packages) do
@@ -243,4 +246,3 @@ for _, project_dir in ipairs(projects) do
             staticruntime "On"
     end
 end
-
